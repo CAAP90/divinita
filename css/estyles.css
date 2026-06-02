@@ -916,6 +916,10 @@ footer strong { color: var(--pink); }
   .float-card {
     display: none;
   }
+
+  .floating-card {
+    display: none;
+  }
 }
  
   .nav-links {
