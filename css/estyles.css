@@ -908,6 +908,17 @@ footer strong { color: var(--pink); }
   nav { padding: 14px 24px; }
   .hamburger { display: flex; }
 
+  #hero {
+    flex-direction: column;
+    padding: 100px 24px 60px;
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 280px;
+  }
+
   .hero-sub {
     font-size: 0.95rem;
     line-height: 1.6;
@@ -1637,9 +1648,8 @@ footer strong { color: var(--pink); }
     flex-direction: column;
   }
   .floating-card {
-    .floating-card {
-    display: none;
-}
+    left: 20px;
+    bottom: 20px;
   }
 }
 
