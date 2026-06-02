@@ -1637,8 +1637,9 @@ footer strong { color: var(--pink); }
     flex-direction: column;
   }
   .floating-card {
-    left: 20px;
-    bottom: 20px;
+    .floating-card {
+    display: none;
+}
   }
 }
 
