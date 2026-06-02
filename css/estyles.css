@@ -1,0 +1,1772 @@
+/* FUENTES LOCALES */
+@font-face {
+  font-family: 'Chewy';
+  src: url('../fonts/chewy-v18-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+}
+ 
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v32-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+}
+ 
+/* VARIABLES */
+:root {
+  --pink:        #FFB3C6;
+  --pink-light:  #FFE4EC;
+  --pink-deep:   #FF85A1;
+  --mint:        #B2EAD8;
+  --mint-light:  #D9F5EC;
+  --lilac:       #D4AAEE;
+  --lilac-light: #EDD9FF;
+  --peach:       #FFCBA4;
+  --cream:       #FFF8F0;
+  --dark:        #1A1A1A;
+  --gray:        #666;
+  --radius-sm:   12px;
+  --radius-md:   24px;
+  --radius-lg:   50px;
+  --shadow-sm:   0 4px 16px rgba(0,0,0,.07);
+  --shadow-md:   0 8px 30px rgba(0,0,0,.10);
+  --shadow-pink: 0 10px 28px rgba(255,133,161,.40);
+  --transition:  .25s ease;
+}
+ 
+/* RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+ 
+img { max-width: 100%; display: block; }
+a { text-decoration: none; }
+.hidden { display: none !important; }
+ 
+/* BOTONES */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink-deep);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius-lg);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+ 
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pink);
+}
+ 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--dark);
+  padding: 14px 32px;
+  border-radius: var(--radius-lg);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  border: 2.5px solid var(--dark);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+ 
+.btn-secondary:hover {
+  background: var(--dark);
+  color: #fff;
+}
+ 
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--pink-deep);
+  padding: 16px 44px;
+  border-radius: var(--radius-lg);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+ 
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+}
+ 
+/* SECTION COMPARTIDO */
+.section-tag {
+  font-family: 'Chewy', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  margin-bottom: 10px;
+  display: block;
+}
+ 
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+ 
+.section-header h2 {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 12px;
+}
+ 
+.section-header p {
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 1rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+ 
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: var(--pink-light);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--pink);
+  transition: box-shadow var(--transition);
+}
+ 
+nav.scrolled {
+  box-shadow: 0 4px 20px rgba(255,133,161,.15);
+}
+ 
+.nav-logo {
+  font-family: 'Chewy', cursive;
+  font-size: 1.9rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.nav-logo span { color: var(--pink-deep); }
+ 
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+ 
+.nav-links a {
+  color: var(--dark);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+ 
+.nav-links a:hover { color: var(--pink-deep); }
+ 
+.nav-cta {
+  background: var(--pink-deep);
+  color: #fff !important;
+  padding: 8px 22px;
+  border-radius: var(--radius-lg);
+  font-weight: 800 !important;
+  transition: opacity var(--transition) !important;
+}
+ 
+.nav-cta:hover { opacity: .88; }
+ 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+ 
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--dark);
+  border-radius: 3px;
+  transition: transform .3s, opacity .3s;
+}
+ 
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+ 
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 120px 80px 80px;
+  background: linear-gradient(rgba(168, 165, 165, 0.75), rgba(144, 142, 142, 0.75)),
+            url('../img/perritos.jpg') center center / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.hero-content {
+  width: 50%; /* O flex: 1; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ 
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--lilac-light);
+  border: 2px solid var(--lilac);
+  border-radius: var(--radius-lg);
+  padding: 6px 18px;
+  font-size: .85rem;
+  font-weight: 700;
+  color: #7a3fa5;
+  margin-bottom: 24px;
+}
+ 
+.hero-title {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+ 
+.hero-title .highlight {
+  color: var(--pink-deep);
+  position: relative;
+  display: inline-block;
+}
+ 
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 8px;
+  background: var(--mint);
+  border-radius: 4px;
+  z-index: -1;
+}
+ 
+.hero-sub {
+  font-size: 1.22rem;
+  color: var(--white);
+  line-height: 1.90;
+  margin-bottom: 40px;
+  font-weight: 650;
+}
+ 
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+ 
+.hero-img {
+  flex-shrink: 0;
+  width: 460px;
+  height: 520px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(234, 231, 231, 0.28);
+  z-index: 2;
+}
+ 
+.hero-img img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+/* MISION */
+#mision {
+  padding: 100px 80px;
+  background: #404040;
+  text-align: center;
+}
+ 
+.mision-inner { max-width: 1000px; margin: 0 auto; }
+ 
+#mision Xction-tag { color: var(--pink); }
+ 
+#mision h2 {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+  color: #fff;
+}
+ 
+.mision-text {
+  font-size: 1.09rem;
+  color: rgba(255, 255, 255, 0.945);
+  max-width: 660px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+  font-weight: 600;
+}
+ 
+.pillars {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    align-items: start !important;
+    width: 100% !important;
+}
+ 
+.pillar {
+    flex: 1 1 300px !important; /* El truco: les permite encogerse y acoplarse juntas */
+    max-width: 320px !important; /* El truco: evita que se estiren y tapen toda la fila */
+    background: rgba(101, 97, 97, 0.721);
+    border: 1.5px solid rgba(245, 241, 241, 0.138);
+    border-radius: var(--radius-md);
+    padding: 36px 24px;
+    text-align: center;
+    transition: background var(--transition), transform var(--transition);
+}
+ 
+.pillar:hover {
+  background: rgba(47, 46, 46, 0.368);
+  transform: translateY(-6px);
+}
+ 
+.pillar-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+ 
+.pillar h3 {
+  font-family: 'Chewy', cursive;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--pink);
+}
+ 
+.pillar p {
+  font-size: .9rem;
+  color: rgba(255,255,255,.60);
+}
+ 
+/* CATALOGO */
+#catalogo {
+  padding: 100px 80px;
+  background: var(--cream);
+}
+ 
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+ 
+.tab {
+  padding: 8px 22px;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  background: var(--pink-light);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--dark);
+}
+ 
+.tab.active, .tab:hover {
+  background: var(--pink-deep);
+  color: #fff;
+}
+ 
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+.product-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s, box-shadow .3s;
+}
+ 
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(255,133,161,.22);
+}
+ 
+.product-img {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  background: var(--pink-light);
+}
+ 
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+ 
+.product-card:hover .product-img img {
+  transform: scale(1.05);
+}
+ 
+.product-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--lilac);
+  color: #5a1a8a;
+  font-size: .7rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  z-index: 2;
+}
+ 
+.product-body { padding: 20px 22px 24px; }
+ 
+.product-ref {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--pink-deep);
+  margin-bottom: 4px;
+}
+ 
+.product-name {
+  font-family: 'Chewy', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+ 
+.product-desc {
+  font-size: .85rem;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+ 
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.product-sizes {
+  font-size: .8rem;
+  color: var(--gray);
+  font-weight: 700;
+}
+ 
+.product-btn {
+  background: var(--pink-deep);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+ 
+.product-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255,133,161,.4);
+}
+ 
+.catalogo-footer { text-align: center; margin-top: 48px; }
+.catalogo-footer p { color: var(--gray); font-weight: 700; margin-bottom: 16px; }
+ 
+/* GUERREROS */
+#guerreros {
+  padding: 100px 80px;
+  background: linear-gradient(135deg, var(--mint-light), var(--lilac-light));
+  text-align: center;
+}
+ 
+.warriors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+ 
+.warrior-chip {
+  background: #fff;
+  border-radius: 60px;
+  padding: 10px 22px;
+  font-family: 'Chewy', cursive;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .25s, box-shadow .25s;
+  cursor: default;
+}
+ 
+.warrior-chip:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+ 
+.warrior-chip .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+ 
+/* TALLAS */
+#tallas {
+  padding: 100px 80px;
+  background: var(--cream);
+}
+ 
+.tallas-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+ 
+.tallas-table {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+ 
+.tallas-table table { width: 100%; border-collapse: collapse; }
+.tallas-table thead { background: var(--pink-deep); color: #fff; }
+ 
+.tallas-table th {
+  padding: 16px 24px;
+  font-family: 'Chewy', cursive;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
+ 
+.tallas-table td {
+  padding: 14px 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--pink-light);
+}
+ 
+.tallas-table tr:last-child td { border-bottom: none; }
+.tallas-table tr:nth-child(even) td { background: var(--pink-light); }
+ 
+.tallas-info h2 {
+  font-family: 'Chewy', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+ 
+.tallas-info p {
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+ 
+.tallas-tip {
+  background: var(--mint-light);
+  border-left: 4px solid var(--mint);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  font-size: .9rem;
+  font-weight: 700;
+  color: #1a6b4a;
+  margin-bottom: 28px;
+}
+ 
+.talla-calc {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+ 
+.talla-calc h3 {
+  font-family: 'Chewy', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  color: var(--pink-deep);
+}
+ 
+.calc-row { display: flex; gap: 10px; }
+ 
+.calc-row input {
+  flex: 1;
+  border: 2px solid var(--pink-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--dark);
+  outline: none;
+  transition: border-color var(--transition);
+}
+ 
+.calc-row input:focus { border-color: var(--pink-deep); }
+ 
+.calc-row button {
+  background: var(--pink-deep);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  white-space: nowrap;
+}
+ 
+.calc-row button:hover { opacity: .85; }
+ 
+.calc-result {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: .95rem;
+  background: var(--lilac-light);
+  color: #5a1a8a;
+  border: 1.5px solid var(--lilac);
+}
+ 
+/* PAGO */
+#pago {
+  padding: 100px 80px;
+  background: var(--dark);
+  color: #fff;
+}
+ 
+.pago-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+.pago-inner h2 {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+ 
+.pago-inner > p {
+  color: rgba(255,255,255,.70);
+  font-weight: 600;
+  margin-bottom: 52px;
+}
+ 
+.payment-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+ 
+.payment-card {
+  background: rgba(255,255,255,.07);
+  border: 1.5px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  transition: background var(--transition), transform var(--transition);
+}
+ 
+.payment-card:hover {
+  background: rgba(255,255,255,.13);
+  transform: translateY(-5px);
+}
+ 
+.payment-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+ 
+.payment-card h3 {
+  font-family: 'Chewy', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--pink);
+}
+ 
+.payment-card p {
+  font-size: .9rem;
+  color: rgba(255,255,255,.60);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+ 
+.payment-card .number {
+  font-family: 'Chewy', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 10px 0;
+}
+ 
+.copy-btn {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.2);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: background var(--transition);
+  margin-top: 6px;
+}
+ 
+.copy-btn:hover { background: rgba(255,255,255,.22); }
+ 
+.nequi-note {
+  background: var(--pink-deep);
+  border-radius: 20px;
+  padding: 20px 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+ 
+.nequi-note > span { font-size: 2rem; flex-shrink: 0; }
+.nequi-sub { font-size: .8rem; opacity: .8; margin-bottom: 4px; }
+ 
+/* REDES */
+#redes {
+  padding: 100px 80px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--pink-light), var(--cream), var(--lilac-light));
+}
+ 
+.redes-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+ 
+.red-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 36px 48px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--dark);
+  transition: transform .3s, box-shadow .3s;
+  min-width: 220px;
+}
+ 
+.red-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.12);
+}
+ 
+.red-icon { font-size: 3.5rem; }
+ 
+.red-card h3 {
+  font-family: 'Chewy', cursive;
+  font-size: 1.4rem;
+}
+ 
+.red-card p {
+  font-weight: 700;
+  color: var(--pink-deep);
+  font-size: .95rem;
+}
+ 
+.red-sub { font-size: .85rem; color: var(--gray); font-weight: 600; }
+ 
+/* CTA */
+#cta {
+  padding: 100px 80px;
+  background: var(--pink-deep);
+  text-align: center;
+}
+ 
+#cta h2 {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #fff;
+  margin-bottom: 14px;
+}
+ 
+#cta p {
+  color: rgba(255,255,255,.85);
+  font-weight: 600;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+ 
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,.60);
+  text-align: center;
+  padding: 32px 40px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+ 
+footer strong { color: var(--pink); }
+.footer-sub { margin-top: 8px; font-size: .8rem; }
+ 
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--dark);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: .95rem;
+  box-shadow: var(--shadow-md);
+  transition: transform .35s ease, opacity .35s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 200;
+  white-space: nowrap;
+}
+ 
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 14px 24px; }
+  .hamburger { display: flex; }
+ 
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(255,248,240,.97);
+    flex-direction: column;
+    padding: 20px 24px 28px;
+    gap: 16px;
+    border-bottom: 2px solid var(--pink);
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  }
+ 
+  .nav-links.open { display: flex; }
+ 
+  #hero {
+    flex-direction: column;
+    padding: 110px 28px 60px;
+    text-align: center;
+    min-height: auto;
+  }
+ 
+  .hero-img {
+    width: 100%;
+    height: 300px;
+  }
+ 
+  .hero-btns { justify-content: center; }
+ 
+  #mision, #catalogo, #guerreros, #tallas, #pago, #redes, #cta {
+    padding: 70px 24px;
+  }
+ 
+  .tallas-inner { grid-template-columns: 1fr; gap: 36px; }
+  .redes-cards { flex-direction: column; align-items: center; }
+}
+ 
+@media (max-width: 480px) {
+    .hero-btns { flex-direction: column; align-items: center; }
+
+    .nequi-note {
+        flex-direction: column;
+        text-align: center;
+    }
+} /* <--- Esta llave de la línea 947 cierra el @media (celulares) */
+
+/* Tu logo debe quedar afuera, libre, abajo del todo: */
+.logo-img {
+    height: 60px;       /* Controla el alto del logo */
+    width: auto;        /* Mantiene la proporción para que no se deforme */
+    display: inline-block;
+    vertical-align: middle;
+}
+/* Agrega el delineado blanco al texto oscuro del título */
+.hero-title {
+    text-shadow: 
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff;
+}
+
+/* Agrega el delineado blanco también a la palabra "amor" para que no pierda el efecto */
+.hero-title .highlight {
+    text-shadow: 
+        -2px -2px 0 #ffffff,  
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff;
+}
+
+/* Estilos para el botón flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;       /* Distancia desde la parte inferior de la pantalla */
+    right: 20px;        /* Distancia desde el borde derecho */
+    width: 70px;        /* Tamaño del botón */
+    height: 70px;
+    background-color: #25d366; /* El color verde oficial de WhatsApp */
+    border-radius: 50%; /* Lo hace completamente redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para que flote */
+    z-index: 1000;      /* Se asegura de que siempre quede por encima de todo */
+    transition: transform 0.3s ease; /* Animación suave al pasar el mouse */
+}
+
+/* 1. Esto crea la burbuja verde pequeña en la esquina inferior derecha */
+.whatsapp-btn {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 50px !important;
+    width: 85px !important;
+    height: 85px !important;
+    background-color: #3ab94fe1 !important;
+    border-radius: 70% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999 !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* 2. Esto controla que el logo de adentro se ajuste al tamaño de la burbuja */
+.whatsapp-btn img {
+    width: 35px !important;
+    height: 35px !important;
+    display: block !important;
+}
+
+/* 3. Efecto visual al pasar el mouse por encima */
+.whatsapp-btn:hover {
+    transform: scale(1.1) !important;
+    background-color: #20ba5a !important;
+}
+/* ==========================================================================
+   DESPLEGABLE DE PERRITOS EN ADOPCIÓN (AÑADIR AL FINAL DEL ARCHIVO)
+   ========================================================================== */
+
+/* 1. Hace que la tarjeta se estire solita y mantenga sus bordes redondeados */
+.pillar {
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+/* 2. Estilo para el botón rosa que abre la lista */
+.lista-perritos summary {
+    background-color: var(--pink-deep) !important; /* Usa la variable rosa que ya tienes arriba */
+    color: white !important;
+    padding: 8px 18px !important;
+    border-radius: var(--radius-lg) !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+    list-style: none !important; /* Quita la flecha por defecto del navegador */
+    text-align: center !important;
+    margin-top: 15px !important;
+    display: inline-block !important;
+    transition: background var(--transition), transform var(--transition) !important;
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+.lista-perritos summary:hover {
+    background-color: #ff4773 !important; /* Un rosa un poco más oscuro */
+    transform: scale(1.03) !important;
+}
+
+/* 3. Contenedor de la lista cuando se abre */
+.lista-perritos ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    background: rgba(255, 255, 255, 0.08) !important; /* Fondo sutil semi-transparente */
+    border-radius: var(--radius-sm) !important;
+    padding: 12px !important;
+    text-align: left !important; /* Alinea nombres a la izquierda para mejor lectura */
+}
+
+/* 4. Estilo de cada nombre en la lista */
+.lista-perritos li {
+    color: #ffffff !important;
+    padding: 6px 10px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+}
+
+/* Quita la línea divisoria al último perrito */
+.lista-perritos li:last-child {
+    border-bottom: none !important;
+}
+
+/* Asegura que la tarjeta de adopción se adapte dinámicamente al contenido */
+.pillar {
+    height: auto !important;
+    transition: all var(--transition);
+}
+
+/* ── Huellitas animadas en el hero ── */
+.paw-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.paw {
+  position: absolute;
+  font-size: 26px;
+  opacity: 0.12;
+  animation: floatPaw linear infinite;
+  user-select: none;
+}
+
+@keyframes floatPaw {
+  0%   { transform: translate(0, 0) rotate(0deg);    opacity: 0.07; }
+  25%  { transform: translate(12px, -18px) rotate(12deg); opacity: 0.14; }
+  50%  { transform: translate(-8px, -10px) rotate(-8deg); opacity: 0.07; }
+  75%  { transform: translate(10px, 5px) rotate(10deg);  opacity: 0.13; }
+  100% { transform: translate(0, 0) rotate(0deg);    opacity: 0.07; }
+}
+
+/* ── Parallax en la foto del hero ── */
+.hero-img img {
+  transition: transform 0.12s linear;
+  will-change: transform;
+}
+
+/* ── Botones crecen 5% al hover ── */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-white:hover,
+.nav-cta:hover,
+.product-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Contenedor Principal (Hero) */
+.hero-section {
+  display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 110px 140px 80px 140px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    /* 🚀 ESTA ES LA CLAVE PARA LA TRANSPARENCIA */
+    /* El 0.85 controla qué tan opaco es el color. Si quieres que se vea MÁS la imagen, bájalo a 0.6 o 0.7 */
+    background-image: linear-gradient(rgba(242, 239, 238, 0.718), rgba(242, 240, 239, 0.915)), url('../img/perritos.jpg') !important;
+    
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* --- BLOQUE IZQUIERDO --- */
+.hero-content {
+ flex: 1 !important;
+    max-width: 580px !important; /* Limita el ancho para que las líneas de texto no se estiren tanto */
+    margin-left: 0 !important;   /* Cero márgenes para que se quede fijo a la izquierda */
+    margin-right: 0 !important;
+}
+       
+
+.badge-social {
+  background-color: #ffeef2;
+  color: #e84a5f;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 80px;
+  color: #111;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+.highlight-love {
+  color: #ff6f91;
+  position: relative;
+  display: inline-block;
+}
+
+/* Opcional: Subrayado verde agua bajo "amor" */
+.highlight-love::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #a8e6cf;
+  border-radius: 2px;
+}
+
+.hero-description {
+  color: #f5f2f2;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+
+}
+
+/* Botones */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: #ff6f91;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 111, 145, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #111;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #111;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* Calificaciones y subtítulos */
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+}
+
+.sub-caption {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+  margin-bottom: 35px;
+}
+
+/* Contenedor de Estadísticas en Fila */
+.hero-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-card {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+  flex: 1;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111;
+  font-weight: 700;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* --- BLOQUE DERECHO: IMAGEN --- */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.main-image-wrapper {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.main-hero-image {
+  width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: contain;
+
+    /* 🚀 FORZAMOS LA ANIMACIÓN DIRECTAMENTE EN LA FOTO */
+    animation: flotarImagenPrincipal 6s ease-in-out infinite !important;
+}
+
+.hero-image-container {
+    position: relative !important;
+    max-width: 450px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    margin-right: 0 !important; /* Limpiamos cualquier margen derecho viejo */
+}
+
+
+.floating-card {
+    position: absolute;
+    bottom: 40px;     /* La eleva un poco sobre el borde inferior */
+    left: -40px;      /* La saca un poquito hacia la izquierda encima de la foto */
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    
+    /* 🚀 AQUÍ SE ACTIVA EL MOVIMIENTO */
+    animation: flotarTarjeta 4s ease-in-out infinite;
+}
+
+/* 🎬 LA ANIMACIÓN (Ponla al final de tu CSS si no la tienes) */
+@keyframes flotarTarjeta {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px); /* Sube suavemente */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a bajar */
+    }
+}
+
+
+.floating-heart {
+  background: #ffeef2;
+  padding: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.floating-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #444;
+  font-weight: 600;
+  line-height: 1.4;
+}
+/* --- RESPONSIVE (Para celulares) --- */
+@media (max-width: 968px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+  }
+  
+  .floating-card {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+/* ========================================================
+   RESETEO Y LIMPIEZA DE INTERFERENCIAS (PEGA ESTO ABAJO)
+   ======================================================== */
+
+/* Forzamos a que la nueva sección limpie cualquier flujo extraño */
+.hero-section {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+    
+    /* 🚀 LA CLAVE: Centra ambos bloques en la pantalla */
+    justify-content: center !important; 
+    
+    /* 🚀 EL ESPACIO DEL CENTRO: Modifica este número si quieres más o menos separación */
+    gap: 1px !important; 
+    
+    /* Colchón arriba, abajo y a los lados */
+    padding: 90px 80px 80px 80px !important; 
+    background-color: #f2f0efe4 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Evita que textos viejos hereden estilos verticales o fondos oscuros */
+.hero-content {
+  flex: 1;
+  max-width: 550px;
+  position: relative;
+  z-index: 2;
+  display: block !important;
+  text-align: left !important;
+}
+
+.badge-social {
+  background-color: #ffeef2;
+  color: #e84a5f;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 80px !important; /* Puedes probar subiendo a 75px, 80px o lo que quieras */
+    color: #111111 !important;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: none !important;
+}
+
+.highlight-love {
+  color: #ff6f91;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-love::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #a8e6cf;
+  border-radius: 2px;
+}
+
+.hero-description {
+  color: #070707 !important;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botones con estilo propio libres de herencia */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: #ff6f91 !important;
+  color: white !important;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 111, 145, 0.3);
+  display: inline-block;
+}
+
+.btn-secondary {
+  background-color: white !important;
+  color: #111 !important;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #111 !important;
+  display: inline-block;
+}
+
+/* Calificaciones */
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.sub-caption {
+  font-size: 13px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+/* Sección de métricas en tarjetas horizontales */
+.hero-stats {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.stat-card {
+  background: white !important;
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0 !important;
+  flex: 1;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111;
+  font-weight: 700;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* --- BLOQUE DERECHO: CONTENEDOR DE LA IMAGEN --- */
+.hero-image-container {
+    position: relative;
+    margin-top: 40px;     /* Mantiene el excelente respiro que le dimos respecto al menú rosa */
+    max-width: 480px;     /* Evita que la foto se crezca de más y se corte */
+    width: 100%;
+
+    /* 🚀 AQUÍ LE REGRESAMOS EL MOVIMIENTO A LA IMAGEN PRINCIPAL */
+    animation: flotarImagenPrincipal 6s ease-in-out infinite;
+}
+
+.main-image-wrapper {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.main-hero-image {
+  
+  width: 100%;          /* Deja que ocupe el ancho de su contenedor */
+    height: auto;         /* 🚀 Esto hace que la altura se adapte SOLA sin recortar nada */
+    border-radius: 24px;  /* Mantiene tus bordes redondeados bonitos */
+    object-fit: contain;  /* Asegura que toda la imagen sea visible */
+  }
+
+
+/* Tarjeta flotante "Gracias a ti..." */
+.floating-card {
+  position: absolute;
+  bottom: 25px;
+  left: -30px;
+  background: white !important;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  max-width: 180px;
+  border: 1px solid #fff0f2 !important;
+}
+
+.floating-heart {
+  background: #ffeef2;
+  padding: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* --- HUELLAS FLOTANTES DE FONDO --- */
+.paw-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-paw {
+  position: absolute;
+  font-size: 40px;
+  color: rgba(101, 84, 88, 0.564) !important;
+  bottom: -50px;
+  animation: floatUp 25s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-110vh) translateX(50px) rotate(20deg); opacity: 0; }
+}
+
+.paw-1 { left: 10%; animation-delay: 0s; font-size: 28px; }
+.paw-2 { left: 40%; animation-delay: 5s; animation-duration: 28s; font-size: 20px; }
+.paw-3 { left: 70%; animation-delay: 12s; animation-duration: 22s; font-size: 32px; }
+.paw-4 { left: 85%; animation-delay: 3s; animation-duration: 30s; }
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 968px) {
+  .hero-section {
+    flex-direction: column !important;
+    padding: 30px 20px;
+  }
+  .hero-stats {
+    flex-direction: column;
+  }
+  .floating-card {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+/* 1. Forzar a que se agrupen en el centro y no en las esquinas */
+.hero-section {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    
+    /* 🚀 ENVIAR A LOS EXTREMOS: El texto se va a la extrema izquierda (tu recuadro) y la foto a la derecha */
+    justify-content: space-between !important; 
+    
+    /* 👈 Un colchón de 140px a los lados para que el texto y la foto respiren respecto a los bordes de la pantalla */
+    padding: 110px 140px 80px 140px !important; 
+    
+    background-color: #f2f0efe4 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. El contenedor de la derecha */
+.hero-image-container {
+    position: relative !important;
+    max-width: 460px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important; /* Forzamos a que se alinee perfectamente a la derecha */
+}
+
+/* 3. La foto principal con su animación FORZADA */
+.main-hero-image {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 24px !important;
+    display: block !important;
+    
+    /* 🚀 Activación del movimiento */
+    animation: flotarImagenPrincipal 5s ease-in-out infinite !important;
+}
+
+/* 4. Los fotogramas exactos de la animación */
+@keyframes flotarImagenPrincipal {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Sube suavemente */
+    }
+    100% {
+        transform: translateY(0);    /* Vuelve a bajar */
+    }
+}
+
+/* --- TAMAÑO DEL TEXTO DESCRIPTIVO --- */
+.hero-description {
+    /* 🚀 SUBIMOS EL TAMAÑO: Un tamaño de 22px para que se lea con total comodidad */
+    font-size: 22px !important;             
+    
+    line-height: 1.6 !important; /* Mantiene un espacio limpio entre renglones */
+}
+
+* Contenedor de las fotos dentro de la tarjeta */
+.rescatados-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Diseño de cada círculo de perrito */
+.perrito-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+}
+
+.perrito-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff9f1c; /* El color naranja que te gusta */
+}
+
+.perrito-item span {
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Asegura que el botón se vea igual al de las otras tarjetas */
+.pillar .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #959192; /* Ajusta este color al que usas en los otros botones */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pillar .btn:hover {
+    background-color: #ff6b8ee2; /* Un tono un poco más oscuro al pasar el mouse */
+}
+
+.dog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 10px;
+}
+
+.dog-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff85a1;
+}
+
+.dog-item p {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* Esto asegura que el enlace se vea como botón */
+a.btn {
+    background-color: #ff769d !important; /* Fuerza el color */
+    color: white !important;
+
+/* Efecto al pasar el mouse */
+a.btn:hover {
+    background-color: #e0688a; /* Un tono un poquito más oscuro al pasar el mouse */
+}
+}
+
+
