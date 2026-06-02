@@ -1397,8 +1397,7 @@ footer strong { color: var(--pink); }
   }
   
   .floating-card {
-    left: 20px;
-    bottom: 20px;
+    display: none;
   }
 }
 
@@ -1648,8 +1647,7 @@ footer strong { color: var(--pink); }
     flex-direction: column;
   }
   .floating-card {
-    left: 20px;
-    bottom: 20px;
+     display: none;
   }
 }
 
