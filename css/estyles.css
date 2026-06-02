@@ -262,7 +262,7 @@ nav.scrolled {
  
 .hero-title {
   font-family: 'Chewy', cursive;
-  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-size: clamp(2rem, 5.5vw, 5rem);
   line-height: 1.1;
   margin-bottom: 20px;
 }
@@ -284,7 +284,7 @@ nav.scrolled {
 }
  
 .hero-sub {
-  font-size: 1.22rem;
+  font-size: 1rem;
   color: var(--white);
   line-height: 1.90;
   margin-bottom: 40px;
@@ -907,6 +907,16 @@ footer strong { color: var(--pink); }
 @media (max-width: 960px) {
   nav { padding: 14px 24px; }
   .hamburger { display: flex; }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .float-card {
+    display: none;
+  }
+}
  
   .nav-links {
     display: none;
