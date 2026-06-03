@@ -1783,13 +1783,22 @@ footer strong { color: var(--pink); }
 
 /* Esto asegura que el enlace se vea como botón */
 a.btn {
-    background-color: #ff769d !important; /* Fuerza el color */
-    color: white !important;
-
-/* Efecto al pasar el mouse */
-a.btn:hover {
-    background-color: #e0688a; /* Un tono un poquito más oscuro al pasar el mouse */
+    display: inline-block;
+    background-color: #ffffff !important;
+    color: #d66b84e2 !important;
+    padding: 16px 44px !important;
+    border-radius: 50px !important;
+    font-weight: 800 !important;
+    font-size: 1.05rem !important;
+    font-family: 'Nunito', sans-serif !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
 }
+
+a.btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2) !important;
+    background-color: #fff0f4 !important;
 }
 
 /* ── RESPONSIVE MÓVIL DEFINITIVO ── */
