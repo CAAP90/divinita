@@ -1792,4 +1792,56 @@ a.btn:hover {
 }
 }
 
+/* ── RESPONSIVE MÓVIL DEFINITIVO ── */
+@media (max-width: 768px) {
 
+  .hero-section {
+    flex-direction: column !important;
+    padding: 90px 20px 40px !important;
+    gap: 30px !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-description {
+    font-size: 16px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-image-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .main-hero-image {
+    width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .hero-stats {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .stat-card {
+    width: 100% !important;
+  }
+
+  .floating-card {
+    display: none !important;
+  }
+}
