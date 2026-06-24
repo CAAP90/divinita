@@ -125,133 +125,133 @@ const PRODUCTS = [
   },
   {
     ref: 'drhouse',
-    img: '/img/drhouse.jpg',
+    img: 'img/drhouse.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'dulce',
-    img: '/img/dulce.jpg',
+    img: 'img/dulce.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'quiron',
-    img: '/img/quiron.jpg',
+    img: 'img/quiron.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'conga',
-    img: '/img/conga.jpg',
+    img: 'img/conga.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'agustin',
-    img: '/img/agustin.jpg',
+    img: 'img/agustin.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'bruno',
-    img: '/img/bruno.jpg',
+    img: 'img/bruno.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tango',
-    img: '/img/tango.jpg',
+    img: 'img/tango.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'puchi',
-    img: '/img/puchi.jpg',
+    img: 'img/puchi.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'bella',
-    img: '/img/bella.jpg',
+    img: 'img/bella.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'almendra',
-    img: '/img/almendra.jpg',
+    img: 'img/almendra.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'roni',
-    img: '/img/roni.jpg',
+    img: 'img/roni.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'simba',
-    img: '/img/simba.jpg',
+    img: 'img/simba.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'abril',
-    img: '/img/abril.jpg',
+    img: 'img/abril.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tomillo',
-    img: '/img/tomillo.jpg',
+    img: 'img/tomillo.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tania',
-    img: '/img/tania.jpg',
+    img: 'img/tania.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'parche',
-    img: '/img/parche.jpg',
+    img: 'img/parche.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'dante',
-    img: '/img/dante.jpg',
+    img: 'img/dante.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'amalia',
-    img: '/img/amalia.jpg',
+    img: 'img/amalia.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'naranja',
-    img: '/img/naranja.jpg',
+    img: 'img/naranja.jpg',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
