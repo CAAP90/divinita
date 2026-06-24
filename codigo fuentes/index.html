@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Variedades y Chucherías Garabato – Todo en un solo lugar</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <div class="logo-icon">🛍️</div>
+        <div class="logo-text">
+          <span class="logo-nombre">Garabato</span>
+          <span class="logo-sub">Variedades & Chucherías</span>
+        </div>
+      </a>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." />
+        <button onclick="buscar()">🔍</button>
+      </div>
+      <div class="header-actions">
+        <button class="btn-login" onclick="abrirLogin()">👤 Ingresar</button>
+        <button class="btn-cart" onclick="abrirCarrito()">🛒 <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO CON LOGO GRANDE -->
+  <section class="hero">
+    <div class="hero-logo-grande">
+      <div class="hero-logo-icono">🛍️</div>
+      <h1 class="hero-logo-titulo">Garabato</h1>
+      <p class="hero-logo-slogan">Variedades & Chucherías</p>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">🔥 Ofertas de temporada</p>
+      <p class="hero-desc">Ropa, hogar, electrónica y mucho más con los mejores precios.</p>
+      <a href="#productos" class="btn-primary">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categorias" id="categorias">
+    <h2 class="section-title">Explora por categoría</h2>
+    <div class="cat-grid">
+      <div class="cat-card" id="cat-ropa" onclick="filtrarCategoria('ropa', this)">👗<span>Ropa</span></div>
+      <div class="cat-card" id="cat-hogar" onclick="filtrarCategoria('hogar', this)">🛋️<span>Hogar</span></div>
+      <div class="cat-card" id="cat-electronica" onclick="filtrarCategoria('electronica', this)">📱<span>Electrónica</span></div>
+      <div class="cat-card" id="cat-deportes" onclick="filtrarCategoria('deportes', this)">⚽<span>Deportes</span></div>
+      <div class="cat-card" id="cat-belleza" onclick="filtrarCategoria('belleza', this)">💄<span>Belleza</span></div>
+      <div class="cat-card" id="cat-juguetes" onclick="filtrarCategoria('juguetes', this)">🧸<span>Juguetes</span></div>
+      <div class="cat-card cat-todos" id="cat-todos" onclick="filtrarCategoria('todos', this)">🏪<span>Ver todos</span></div>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filtros" id="productos">
+    <div class="filtros-inner">
+      <h2 class="section-title" id="tituloSeccion">Nuestros productos</h2>
+      <div class="filtros-controles">
+        <select id="filtroPrecio" onchange="aplicarFiltros()">
+          <option value="todos">💲 Precio: Todos</option>
+          <option value="0-50000">Menos de $50.000</option>
+          <option value="50000-100000">$50.000 – $100.000</option>
+          <option value="100000-999999">Más de $100.000</option>
+        </select>
+        <select id="filtroCategoria" onchange="aplicarFiltros()">
+          <option value="todos">📦 Categoría: Todas</option>
+          <option value="ropa">Ropa</option>
+          <option value="hogar">Hogar</option>
+          <option value="electronica">Electrónica</option>
+          <option value="deportes">Deportes</option>
+          <option value="belleza">Belleza</option>
+          <option value="juguetes">Juguetes</option>
+        </select>
+        <select id="filtroOrden" onchange="aplicarFiltros()">
+          <option value="default">🔀 Ordenar</option>
+          <option value="az">A – Z</option>
+          <option value="za">Z – A</option>
+          <option value="menorprecio">Menor precio</option>
+          <option value="mayorprecio">Mayor precio</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="productos-grid" id="productosGrid"></div>
+  </section>
+
+  <!-- MODAL DETALLE PRODUCTO -->
+  <div class="modal-overlay" id="modalProductoOverlay" onclick="cerrarProducto()"></div>
+  <div class="modal modal-producto" id="modalProducto">
+    <button class="modal-close" onclick="cerrarProducto()">✕</button>
+    <div class="producto-detalle-icono" id="detalle-icono"></div>
+    <h2 id="detalle-nombre"></h2>
+    <p class="detalle-categoria" id="detalle-categoria"></p>
+    <div class="detalle-precio-wrap">
+      <span class="precio detalle-precio" id="detalle-precio"></span>
+      <span class="precio-old" id="detalle-precio-old"></span>
+    </div>
+    <p class="detalle-desc" id="detalle-desc"></p>
+    <button class="btn-primary detalle-btn" id="detalle-btn-agregar">🛒 Agregar al carrito</button>
+  </div>
+
+  <!-- CARRITO (panel lateral) -->
+  <div class="carrito-overlay" id="carritoOverlay" onclick="cerrarCarrito()"></div>
+  <div class="carrito-panel" id="carritoPanel">
+    <div class="carrito-header">
+      <h3>🛒 Tu carrito</h3>
+      <button onclick="cerrarCarrito()">✕</button>
+    </div>
+    <div class="carrito-items" id="carritoItems">
+      <p class="carrito-vacio">Tu carrito está vacío</p>
+    </div>
+    <div class="carrito-footer">
+      <p>Total: <strong id="carritoTotal">$0</strong></p>
+      <button class="btn-primary btn-whatsapp-compra" onclick="finalizarCompra()">💬 Pedir por WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal-overlay" id="modalOverlay" onclick="cerrarLogin()"></div>
+  <div class="modal" id="modalLogin">
+    <button class="modal-close" onclick="cerrarLogin()">✕</button>
+    <h3>Bienvenido</h3>
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="cambiarTab('login', this)">Ingresar</button>
+      <button class="modal-tab" onclick="cambiarTab('registro', this)">Registrarse</button>
+    </div>
+    <div id="formLogin">
+      <input type="email" placeholder="Correo electrónico" />
+      <input type="password" placeholder="Contraseña" />
+      <button class="btn-primary">Ingresar</button>
+    </div>
+    <div id="formRegistro" style="display:none">
+      <input type="text" placeholder="Nombre completo" />
+      <input type="email" placeholder="Correo electrónico" />
+      <input type="password" placeholder="Contraseña" />
+      <button class="btn-primary">Crear cuenta</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo-nombre footer-logo-nombre">Garabato</span>
+        </a>
+        <p>Tu marketplace de confianza.</p>
+      </div>
+      <div>
+        <h5>Categorías</h5>
+        <ul>
+          <li><a href="#">Ropa</a></li>
+          <li><a href="#">Hogar</a></li>
+          <li><a href="#">Electrónica</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Ayuda</h5>
+        <ul>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Variedades y Chucherías Garabato – Todos los derechos reservados.</p>
+  </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="btn-whatsapp-flotante" href="https://wa.me/573224178831?text=Hola!%20Me%20interesa%20un%20producto%20de%20Garabato%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" title="Escríbenos por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30" height="30"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
