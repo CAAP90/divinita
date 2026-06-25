@@ -6,252 +6,252 @@
 const PRODUCTS = [
   {
     ref: 'MAGIA',
-    img: 'img/zapatos-006.jpg',
+    img: 'img/zapatos-006.webp',
     badge: 'Suela EVA',
     category: 'eva',
     desc: 'Liviano, comodo y lleno de estilo. Suela EVA antideslizante.'
   },
   {
     ref: 'AURORA',
-    img: 'img/zapatos-007.jpg',
+    img: 'img/zapatos-007.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Diseno fresco y moderno, perfecto para el dia a dia.'
   },
   {
     ref: 'UVA',
-    img: 'img/zapatos-008.jpg',
+    img: 'img/zapatos-008.webp',
     badge: 'Suela EVA',
     category: 'eva',
     desc: 'Estampado unico y lleno de color. Suela EVA super liviana.'
   },
   {
     ref: 'TESORO',
-    img: 'img/zapatos-009.jpg',
+    img: 'img/zapatos-009.webp',
     badge: 'Suela EVA',
     category: 'eva',
     desc: 'Elegancia y confort en cada paso que das.'
   },
   {
     ref: 'MIA',
-    img: 'img/zapatos-010.jpg',
+    img: 'img/zapatos-010.webp',
     badge: '',
     category: 'casual',
     desc: 'Clasico y versatil, ideal para cualquier ocasion.'
   },
   {
     ref: 'NOCHE',
-    img: 'img/zapatos-011.jpg',
+    img: 'img/zapatos-011.webp',
     badge: 'Suela EVA',
     category: 'eva',
     desc: 'Estampado atrevido y con mucho caracter.'
   },
   {
     ref: 'ALMA',
-    img: 'img/zapatos-012.jpg',
+    img: 'img/zapatos-012.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Blanco puro y elegante, combina con todo.'
   },
   {
     ref: 'VERA',
-    img: 'img/zapatos-013.jpg',
+    img: 'img/zapatos-013.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Comodidad maxima con diseno moderno.'
   },
   {
     ref: 'PEPE',
-    img: 'img/zapatos-014.jpg',
+    img: 'img/zapatos-014.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma alta y estilo inigualable.'
   },
   {
     ref: 'PAZ',
-    img: 'img/zapatos-015.jpg',
+    img: 'img/zapatos-015.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Comodidad y estilo en cada paso.'
   },
   {
     ref: 'PECAS',
-    img: 'img/zapatos-016.jpg',
+    img: 'img/zapatos-016.webp',
     badge: '',
     category: 'casual',
     desc: 'Diseno bicolor con mucha personalidad.'
   },
   {
     ref: 'GAEL',
-    img: 'img/zapatos-017.jpg',
+    img: 'img/zapatos-017.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Suave y comodo, perfecto para el dia a dia.'
   },
   {
     ref: 'BRISA',
-    img: 'img/zapatos-018.jpg',
+    img: 'img/zapatos-018.webp',
     badge: '',
     category: 'casual',
     desc: 'Fresco y ligero como una brisa. Toque de color verde.'
   },
   {
     ref: 'ANGEL',
-    img: 'img/zapatos-019.jpg',
+    img: 'img/zapatos-019.webp',
     badge: '',
     category: 'casual',
     desc: 'Clasico y elegante, un basico que no puede faltar.'
   },
   {
     ref: 'MATEO',
-    img: 'img/zapatos-020.jpg',
+    img: 'img/zapatos-020.webp',
     badge: '',
     category: 'deportivo',
     desc: 'Estilo retro con suela de goma. Tendencia garantizada.'
   },
   {
     ref: 'LUPE',
-    img: 'img/zapatos-021.jpg',
+    img: 'img/zapatos-021.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'estrella',
-    img: 'img/estrella.jpg',
+    img: 'img/estrella.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'drhouse',
-    img: 'img/drhouse.jpg',
+    img: 'img/drhouse.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'dulce',
-    img: 'img/dulce.jpg',
+    img: 'img/dulce.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'quiron',
-    img: 'img/quiron.jpg',
+    img: 'img/quiron.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'conga',
-    img: 'img/conga.jpg',
+    img: 'img/conga.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'agustin',
-    img: 'img/agustin.jpg',
+    img: 'img/agustin.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'bruno',
-    img: 'img/bruno.jpg',
+    img: 'img/bruno.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tango',
-    img: 'img/tango.jpg',
+    img: 'img/tango.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'puchi',
-    img: 'img/puchi.jpg',
+    img: 'img/puchi.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'bella',
-    img: 'img/bella.jpg',
+    img: 'img/bella.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'almendra',
-    img: 'img/almendra.jpg',
+    img: 'img/almendra.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'roni',
-    img: 'img/roni.jpg',
+    img: 'img/roni.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'simba',
-    img: 'img/simba.jpg',
+    img: 'img/simba.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'abril',
-    img: 'img/abril.jpg',
+    img: 'img/abril.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tomillo',
-    img: 'img/tomillo.jpg',
+    img: 'img/tomillo.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'tania',
-    img: 'img/tania.jpg',
+    img: 'img/tania.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'parche',
-    img: 'img/parche.jpg',
+    img: 'img/parche.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'dante',
-    img: 'img/dante.jpg',
+    img: 'img/dante.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'amalia',
-    img: 'img/amalia.jpg',
+    img: 'img/amalia.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
   },
   {
     ref: 'naranja',
-    img: 'img/naranja.jpg',
+    img: 'img/naranja.webp',
     badge: '',
     category: 'casual',
     desc: 'Plataforma gruesa y diseno minimalista.'
