@@ -1,14 +1,16 @@
-/* FUENTES LOCALES */
+﻿/* FUENTES LOCALES */
 @font-face {
   font-family: 'Chewy';
   src: url('../fonts/chewy-v18-latin-regular.woff2') format('woff2');
   font-weight: 400;
+  font-display: swap;
 }
  
 @font-face {
   font-family: 'Nunito';
   src: url('../fonts/nunito-v32-latin-regular.woff2') format('woff2');
   font-weight: 400;
+  font-display: swap;
 }
  
 /* VARIABLES */
@@ -1859,3 +1861,5 @@ a.btn:hover {
     display: none !important;
   }
 }
+
+
