@@ -1,25 +1,26 @@
-$cssPath  = "C:\Proyectos\divinita\css\estyles.css"
 $htmlPath = "C:\Proyectos\divinita\index.html"
-
-# CSS: font-display swap
-$css = Get-Content $cssPath -Raw -Encoding UTF8
-$css = $css -replace "font-weight: 400;`r`n}", "font-weight: 400;`r`n  font-display: swap;`r`n}"
-Set-Content $cssPath $css -Encoding UTF8
-Write-Host "CSS listo"
-
-# HTML: preload
 $html = Get-Content $htmlPath -Raw -Encoding UTF8
-$html = $html -replace '<link rel="stylesheet" href="css/estyles.css" />', '<link rel="preload" as="image" href="img/fondo_perritos2.webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/estyles.css" />'
 
-# HTML: fetchpriority en hero
-$html = $html -replace 'class="main-hero-image">', 'class="main-hero-image" fetchpriority="high" width="480" height="520">'
+# 1. Usar CSS minificado
+$html = $html -replace 'href="css/estyles.css"', 'href="css/estyles.min.css"'
 
-# HTML: lazy loading en perritos
-$html = $html -replace '<img src="img/', '<img loading="lazy" src="img/'
-$html = $html -replace '<img loading="lazy" src="img/fondo_perritos2', '<img src="img/fondo_perritos2'
-$html = $html -replace '<img loading="lazy" src="img/logo2', '<img src="img/logo2'
+# 2. Agregar <main> alrededor del contenido
+$html = $html -replace '<!-- ── MISION ── -->', '<main>
+  <!-- ── MISION ── -->'
+$html = $html -replace '<!-- ── FOOTER ── -->', '</main>
+
+  <!-- ── FOOTER ── -->'
+
+# 3. aria-label en botón hamburguesa
+$html = $html -replace '<button class="hamburger" id="hamburger">', '<button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">'
+
+# 4. aria-label en botones de copiar
+$html = $html -replace '<button class="copy-btn" data-copy="66779376215">Copiar número</button>', '<button class="copy-btn" data-copy="66779376215" aria-label="Copiar número Bancolombia">Copiar número</button>'
+$html = $html -replace '<button class="copy-btn" data-copy="458100033083">Copiar número</button>', '<button class="copy-btn" data-copy="458100033083" aria-label="Copiar número Davivienda">Copiar número</button>'
+$html = $html -replace '<button class="copy-btn" data-copy="3132943348">Copiar número</button>', '<button class="copy-btn" data-copy="3132943348" aria-label="Copiar número Nequi">Copiar número</button>'
+
+# 5. aria-label en botón calculadora
+$html = $html -replace '<button id="calc-btn">Buscar talla</button>', '<button id="calc-btn" aria-label="Buscar talla según medida">Buscar talla</button>'
 
 Set-Content $htmlPath $html -Encoding UTF8
-Write-Host "HTML listo"
-Write-Host "Todo aplicado"
+Write-Host "HTML actualizado"

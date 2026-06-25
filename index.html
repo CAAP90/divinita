@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Divinita — El poder del amor salva vidas</title>
   <link rel="preload" as="image" href="img/fondo_perritos2.webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/estyles.css" />
+  <link rel="stylesheet" href="css/estyles.min.css" />
 </head>
 <body>
  
@@ -14,7 +14,7 @@
     <div class="nav-logo">
        <img src="img/logo2.png" alt="Logo Divinita" class="logo-img">
     </div>
-    <button class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
       <span></span>
       <span></span>
       <span></span>
@@ -100,6 +100,7 @@
 
   </section>
  
+  <main>
   <!-- ── MISION ── -->
   <section id="mision">
     <div class="mision-inner">
@@ -366,7 +367,7 @@
           <h3>Calculadora rápida</h3>
           <div class="calc-row">
             <input type="number" id="cm-input" placeholder="Ej: 24.0" step="0.1" min="20" max="30" />
-            <button id="calc-btn">Buscar talla</button>
+            <button id="calc-btn" aria-label="Buscar talla según medida">Buscar talla</button>
           </div>
           <div id="calc-result" class="calc-result hidden"></div>
         </div>
@@ -387,7 +388,7 @@
           <p>Cuenta de ahorros</p>
           <p>Eliana Gómez</p>
           <div class="number">66779376215</div>
-          <button class="copy-btn" data-copy="66779376215">Copiar número</button>
+          <button class="copy-btn" data-copy="66779376215" aria-label="Copiar número Bancolombia">Copiar número</button>
         </div>
         <div class="payment-card">
           <span class="icon">🏦</span>
@@ -395,7 +396,7 @@
           <p>Cuenta de ahorros</p>
           <p>Eliana Paola Gómez</p>
           <div class="number">458100033083</div>
-          <button class="copy-btn" data-copy="458100033083">Copiar número</button>
+          <button class="copy-btn" data-copy="458100033083" aria-label="Copiar número Davivienda">Copiar número</button>
         </div>
         <div class="payment-card">
           <span class="icon">📱</span>
@@ -403,7 +404,7 @@
           <p>Transferencia rápida</p>
           <p>También aceptamos estas apps</p>
           <div class="number">3132943348</div>
-          <button class="copy-btn" data-copy="3132943348">Copiar número</button>
+          <button class="copy-btn" data-copy="3132943348" aria-label="Copiar número Nequi">Copiar número</button>
         </div>
       </div>
       <div class="nequi-note">
@@ -448,6 +449,8 @@
     </a>
   </section>
  
+  </main>
+
   <!-- ── FOOTER ── -->
   <footer>
     <p>💗 Hecho con amor por <strong>Divinita al Rescate</strong> — El poder del amor salva vidas 🐾</p>
@@ -516,5 +519,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="65" height="65"></a>
 </body>
 </html>
+
 
 
